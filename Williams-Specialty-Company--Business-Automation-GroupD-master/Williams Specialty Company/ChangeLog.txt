@@ -1,0 +1,6 @@
+CHANGE LOG.
+11/5/2019 Started project. added webforms. added navigation via image and link buttons - Joey Muzzo
+11/6/2019 Added Log In and Log out buttons.  Added Log In web form.  Login button visible by defaut
+          Log out button not visible by default.  Program will handle this when loaded.
+		  When you click the log in button, it should take you to either the My Account page if secLvl 
+		  is low, else it takes you to Order info page - Daniel Crowder
