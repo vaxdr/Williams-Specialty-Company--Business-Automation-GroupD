@@ -21,8 +21,6 @@
     </div>
         <asp:Label ID="Label2" runat="server" Text="Password :"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" TabIndex="2"></asp:TextBox>
-        <asp:Login ID="Login1" runat="server">
-        </asp:Login>
         <p>
             <asp:ImageButton ID="btnLogin" runat="server" BorderStyle="Outset" Height="50px" ImageUrl="~/images/LogIn.png" OnClick="btnLogin_Click" TabIndex="3" Width="148px" />
         </p>
