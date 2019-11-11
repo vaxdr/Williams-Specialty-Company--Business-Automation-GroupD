@@ -9,40 +9,40 @@
         .auto-style1 {
             text-align: justify;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div class="auto-style1">
     
         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/Logo.png" PostBackUrl="~/Main.aspx" />
-    
+        &nbsp;
+        <asp:ImageButton ID="btnLogout" runat="server" Height="53px" ImageAlign="Top" ImageUrl="~/images/LogOut.png" Visible="False" Width="171px" />
+        <asp:ImageButton ID="btnLogin" runat="server" Height="59px" ImageAlign="Top" ImageUrl="~/images/LogIn.png" PostBackUrl="~/LogIn.aspx" Visible="False" Width="157px" />
         <br />
         <br />
-        <br />
-        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/images/Catalog.png" PostBackUrl="~/Catalog.aspx" Width="195px" Height="55px" />
+        <asp:ImageButton ID="btnViewCatalog" runat="server" ImageUrl="~/images/Catalog.png" PostBackUrl="~/Catalog.aspx" Width="195px" Height="55px" />
     
     &nbsp;&nbsp;
-        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Catalog.aspx">Click to view our Catalog!</asp:LinkButton>
         <br />
+        <asp:ImageButton ID="btnPlaceOrder" runat="server" ImageUrl="~/images/PlaceOrder.png" Width="197px" PostBackUrl="~/PlaceOrder.aspx" />
+    
         <br />
-        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/images/PlaceOrder.png" Width="197px" PostBackUrl="~/PlaceOrder.aspx" />
     
     &nbsp;
     
-        <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/PlaceOrder.aspx">Click to place an Order!</asp:LinkButton>
         <br />
-        <br />
-        <asp:ImageButton ID="ImageButton4" runat="server" Height="56px" ImageUrl="~/images/MyAccount.png" PostBackUrl="~/MyAccount.aspx" Width="197px" />
+        <asp:ImageButton ID="btnMyAccount" runat="server" Height="56px" ImageUrl="~/images/MyAccount.png" PostBackUrl="~/MyAccount.aspx" Width="197px" />
     
-        &nbsp;<asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/MyAccount.aspx">Click to view your Account!</asp:LinkButton>
         <br />
+    
+        &nbsp;<br />
+        <asp:ImageButton ID="btnOrderInfo" runat="server" ImageUrl="~/images/OrderInformation.png" PostBackUrl="~/OrderInformation.aspx" Width="183px" />
+    
         <br />
-        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/images/OrderInformation.png" PostBackUrl="~/OrderInformation.aspx" Width="183px" />
     
     &nbsp;&nbsp;&nbsp;
-        <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/OrderInformation.aspx">Click to view Order Information!</asp:LinkButton>
-    
+            
     </div>
     </form>
 </body>
