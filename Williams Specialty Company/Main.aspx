@@ -40,6 +40,10 @@
         <asp:ImageButton ID="btnOrderInfo" runat="server" ImageUrl="~/images/OrderInformation.png" PostBackUrl="~/OrderInformation.aspx" Width="183px" />
     
         <br />
+        <br />
+        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/CreateUser.aspx">Create User</asp:LinkButton>
+    
+        <br />
     
     &nbsp;&nbsp;&nbsp;
             
