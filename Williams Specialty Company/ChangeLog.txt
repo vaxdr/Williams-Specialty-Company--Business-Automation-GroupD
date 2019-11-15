@@ -6,3 +6,4 @@ CHANGE LOG.
 		  is low, else it takes you to Order info page - Daniel Crowder
 
 11/11/2019 added image and link buttons for clothing, plaque engraving, and trophy's on catalog webform - not sure if this is the design we want or just temporary idea - Joey Muzzo 
+11/11/2019 added microsoft access database file named Group4DB. Added a data set named dsCustomers. -Joey Muzzo
