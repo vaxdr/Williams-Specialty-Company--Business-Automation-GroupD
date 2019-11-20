@@ -9,3 +9,7 @@ CHANGE LOG.
 11/11/2019 added microsoft access database file named Group4DB. Added a data set named dsCustomers. -Joey Muzzo
 
 11/14/2019 added ability to create, edit, and delete a user. - Group 4
+
+11/19/2019 worked on login page - Joey Muzzo
+
+11/20/2019 finished login page and added MyAccount table connections to populate tables based on the user session status - Joey Muzzo
