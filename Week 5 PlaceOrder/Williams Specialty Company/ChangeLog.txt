@@ -1,0 +1,32 @@
+CHANGE LOG.
+11/5/2019 Started project. added webforms. added navigation via image and link buttons - Joey Muzzo
+11/6/2019 Added Log In and Log out buttons.  Added Log In web form.  Login button visible by defaut
+          Log out button not visible by default.  Program will handle this when loaded.
+		  When you click the log in button, it should take you to either the My Account page if secLvl 
+		  is low, else it takes you to Order info page - Daniel Crowder
+
+11/11/2019 added image and link buttons for clothing, plaque engraving, and trophy's on catalog webform - not sure if this is the design we want or just temporary idea - Joey Muzzo 
+11/11/2019 added microsoft access database file named Group4DB. Added a data set named dsCustomers. -Joey Muzzo
+
+11/14/2019 added ability to create, edit, and delete a user. - Joey Muzzo
+
+11/18/2019 added VerifyUser class for login - Joey Muzzo
+
+11/19/2019 added GetAddressInfo class to retireve customer address information for the MyAccount webform - Joey Muzzo
+11/19/2019 added session states for user validation - Joey Muzzo
+11/19/2019 added switch statement SecurityLevel with FormsAuthentication and cases for user security levels - Joey Muzzo
+11/19/2019 added dsCustomerInfo for user authentication - Joey Muzzo
+
+11/21/2019 added if statement to hide grdUsers unless user security level == "O" so customers cant edits users - Joey Muzzo
+11/21/2019 added if statement to redirect user to Login if they select PlaceOrder on Main and are not signed in - Joey Muzzo
+11/21/2019 added if statement to redirect user to Login if they select MyAccount on Main and are not signed in - Joey Muzzo
+11/21/2019 added grdCatalog to Catalog webform to display product catalog - Joey Muzzo
+
+11/23/2019 added labels and textboxes to accept customer and address information on CreateUser webform - Joey Muzzo
+11/23/2019 added grdOrders to MyAccount webfrom to display customers oders - Joey Muzzo
+11/23/2019 updated SaveUser class to accept new customers - Joey Muzzo, Daniel Crowder
+
+11/26/2019 added textbox validation for CreateUser webfrom - Joey Muzzo
+11/26/2019 added dsOrders dataset with PurchaseOrderDetail and PurchaseOrderForm tables. they are connected using the OrderID key - Joey Muzzo
+11/26/2019 updated grdCatalog and added SQL datasource to create connection to Product table. - Joey Muzzo
+11/26/2019 added lblDisplaySuccess to display the create user success message in black font - Joey Muzzo
