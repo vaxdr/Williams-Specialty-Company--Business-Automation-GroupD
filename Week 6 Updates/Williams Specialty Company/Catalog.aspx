@@ -15,6 +15,30 @@
         <br />
         <asp:Label ID="lblCatalog" runat="server" Text="This is the Catalog page"></asp:Label>
     
+        <asp:GridView ID="grdCatalogCustomer" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ProdID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:ImageField DataImageUrlField="ProdImage" DataImageUrlFormatString="~\Images\{0}">
+                    <ControlStyle Height="100px" Width="75px" />
+                </asp:ImageField>
+                <asp:BoundField DataField="ProdID" HeaderText="ProdID" InsertVisible="False" ReadOnly="True" SortExpression="ProdID" />
+                <asp:BoundField DataField="ProdName" HeaderText="ProdName" SortExpression="ProdName" />
+                <asp:BoundField DataField="ProdDescription" HeaderText="ProdDescription" SortExpression="ProdDescription" />
+                <asp:BoundField DataField="JobType" HeaderText="JobType" SortExpression="JobType" />
+                <asp:BoundField DataField="MediaType" HeaderText="MediaType" SortExpression="MediaType" />
+                <asp:BoundField DataField="ListPrice" HeaderText="ListPrice" SortExpression="ListPrice" DataFormatString="{0:c}" />
+            </Columns>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+            <SortedAscendingCellStyle BackColor="#FDF5AC" />
+            <SortedAscendingHeaderStyle BackColor="#4D0000" />
+            <SortedDescendingCellStyle BackColor="#FCF6C0" />
+            <SortedDescendingHeaderStyle BackColor="#820000" />
+        </asp:GridView>
+    
         <br />
     
         <br />
@@ -66,7 +90,7 @@
         <asp:Label ID="lblDisplayCatalog" runat="server" ForeColor="Red"></asp:Label>
 &nbsp;<asp:Label ID="lblUpdateCatalogSuccess" runat="server"></asp:Label>
         <br />
-        <asp:GridView ID="grdCatalog" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="ProdID" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="grdCatalog" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="ProdID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="grdCatalog_SelectedIndexChanged" Visible="False">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:ImageField DataImageUrlField="ProdImage" DataImageUrlFormatString="~\Images\{0}">

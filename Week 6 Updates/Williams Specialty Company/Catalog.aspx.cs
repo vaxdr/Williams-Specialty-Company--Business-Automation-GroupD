@@ -22,7 +22,10 @@ public partial class Catalog : System.Web.UI.Page
             lblListPrice.Visible = true;
             txtListPrice.Visible = true;
             btnUpdateCatalog.Visible = true;
+            grdCatalogCustomer.Visible = false;
+            grdCatalog.Visible = true;
         }
+        
     }
 
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
@@ -87,5 +90,10 @@ public partial class Catalog : System.Web.UI.Page
         {
             lblDisplayCatalog.Text = ex.Message;
         }
+    }
+
+    protected void grdCatalog_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
