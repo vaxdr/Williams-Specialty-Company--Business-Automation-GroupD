@@ -29,8 +29,8 @@
                 <asp:BoundField DataField="CCExp" HeaderText="CCExp" SortExpression="CCExp" />
                 <asp:BoundField DataField="CCPin" HeaderText="CCPin" SortExpression="CCPin" />
                 <asp:BoundField DataField="CCType" HeaderText="CCType" SortExpression="CCType" />
-                <asp:BoundField DataField="AddressID" HeaderText="AddressID" SortExpression="AddressID" />
-                <asp:BoundField DataField="UserID" HeaderText="UserID" SortExpression="UserID" />
+                <asp:BoundField DataField="AddressID" HeaderText="AddressID" SortExpression="AddressID" ReadOnly="True" />
+                <asp:BoundField DataField="UserID" HeaderText="UserID" SortExpression="UserID" ReadOnly="True" />
                 <asp:CommandField ShowEditButton="True" />
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
@@ -45,7 +45,7 @@
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString5 %>" ProviderName="<%$ ConnectionStrings:ConnectionString5.ProviderName %>" SelectCommand="SELECT * FROM [Customer] WHERE [CustID] = ?" DeleteCommand="DELETE FROM Customer WHERE (CustID = ?)" InsertCommand="INSERT INTO [Customer] ([CFName],[CLName], [CCNum], [CCExp], [CCPin], [CCType]) VALUES (?, ?, ?, ?,?,?)" UpdateCommand="UPDATE [Customer] SET [CFName] = ?, [CLName] = ?, [CCNum] = ?, [CCExp] = ?, [CCPin] = ?, [CCType] = ?, [AddressID] = ?, [UserID] = ?  WHERE [CustID] = ?" OnSelecting="SqlDataSource1_Selecting">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString5 %>" ProviderName="<%$ ConnectionStrings:ConnectionString5.ProviderName %>" SelectCommand="SELECT * FROM [Customer] WHERE [CustID] = ?" DeleteCommand="DELETE FROM Customer WHERE (CustID = ?)" InsertCommand="INSERT INTO [Customer] ([CFName],[CLName], [CCNum], [CCExp], [CCPin], [CCType]) VALUES (?, ?, ?, ?,?,?)" UpdateCommand="UPDATE [Customer] SET [CFName] = ?, [CLName] = ?, [CCNum] = ?, [CCExp] = ?, [CCPin] = ?, [CCType] = ? WHERE [CustID] = ?" OnSelecting="SqlDataSource1_Selecting">
             <DeleteParameters>
                 <asp:Parameter Name="CustID" Type="Int32" />
             </DeleteParameters>
@@ -70,8 +70,7 @@
                 <asp:Parameter Name="CCExp" Type="String" />
                 <asp:Parameter Name="CCPin" Type="String" />
                 <asp:Parameter Name="CCType" Type="String" />
-                <asp:Parameter Name="AddressID" Type="Int32" />
-                <asp:Parameter Name="UserID" Type="Int32" />
+                
                 <asp:Parameter Name="CustID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
