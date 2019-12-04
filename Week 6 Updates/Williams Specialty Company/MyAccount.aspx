@@ -19,7 +19,7 @@
     
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="CustID" style="margin-top: 0px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="grdCustomer" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="CustID" style="margin-top: 0px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="CustID" HeaderText="CustID" SortExpression="CustID" InsertVisible="False" ReadOnly="True" />
@@ -79,7 +79,7 @@
     
     &nbsp;&nbsp;&nbsp;
     
-        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="AddressID" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="grdAddress" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="AddressID" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="AddressID" HeaderText="AddressID" InsertVisible="False" ReadOnly="True" SortExpression="AddressID" />

@@ -43,4 +43,6 @@ CHANGE LOG.
 11/30/2019 added SecurityLevel if statement that sets visibility of lables and text boxes to visible if the security level is equal to operations manager - Joey Muzzo
 11/30/2019 added input validation for UpdateCatalog. Makes sure all input fields are entered correctly. - Joey Muzzo
 
-12/4/2019 updated the Update statement for grdOrders to only allow customers to edit the message to be printed field - Joey Muzzo
+12/4/2019 updated the update statement for grdOrders to only allow customers to edit the message to be printed field - Joey Muzzo
+12/4/2019 updated the update statement for grdCustomer to not allow customers to update their AddressID or UserID - Joey Muzzo
+12/4/2019 updated visibility for gridview on Catalog web from to not allow customers to edit the product catalog - Joey Muzzo

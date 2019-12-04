@@ -22,7 +22,7 @@ public partial class Catalog : System.Web.UI.Page
             lblListPrice.Visible = true;
             txtListPrice.Visible = true;
             btnUpdateCatalog.Visible = true;
-            grdCatalogCustomer.Visible = false;
+            grdCatalogCustomer.Visible = false;//updated 12/4/2019 makes the catalog for customers visible and hides the editable catalog gridview
             grdCatalog.Visible = true;
         }
         
