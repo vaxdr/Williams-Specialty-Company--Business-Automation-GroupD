@@ -16,23 +16,25 @@
     
         <br />
         <br />
-        <asp:GridView ID="grdOrderInformation" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="grdOrderInformation" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames ="SalesOrderForm.OrderID">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="SalesOrderID" HeaderText="SalesOrderID" InsertVisible="False" SortExpression="SalesOrderID" />
-                <asp:BoundField DataField="PaidAmt" HeaderText="PaidAmt" SortExpression="PaidAmt" DataFormatString="{0:C}" />
-                <asp:BoundField DataField="RemainingAmt" HeaderText="RemainingAmt" SortExpression="RemainingAmt" DataFormatString="{0:C}" />
-                <asp:BoundField DataField="EmployeeID" HeaderText="EmployeeID" SortExpression="EmployeeID" />
-                <asp:BoundField DataField="SalesOrderForm.OrderID" HeaderText="SalesOrderForm.OrderID" SortExpression="SalesOrderForm.OrderID" />
-                <asp:BoundField DataField="ProdID" HeaderText="ProdID" SortExpression="ProdID" />
-                <asp:BoundField DataField="OrderQty" HeaderText="OrderQty" SortExpression="OrderQty" />
-                <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
-                <asp:BoundField DataField="Customer.CustID" HeaderText="Customer.CustID" InsertVisible="False" SortExpression="Customer.CustID" />
-                <asp:BoundField DataField="CFName" HeaderText="CFName" SortExpression="CFName" />
-                <asp:BoundField DataField="CLName" HeaderText="CLName" SortExpression="CLName" />
-                <asp:CheckBoxField DataField="PayOnDel" HeaderText="PayOnDel" SortExpression="PayOnDel" />
+                <asp:BoundField DataField="SalesOrderID" HeaderText="SalesOrderID" InsertVisible="False" SortExpression="SalesOrderID" ReadOnly="True" />
+                <asp:BoundField DataField="PaidAmt" HeaderText="PaidAmt" SortExpression="PaidAmt" DataFormatString="{0:C}" ReadOnly="True" />
+                <asp:BoundField DataField="RemainingAmt" HeaderText="RemainingAmt" SortExpression="RemainingAmt" DataFormatString="{0:C}" ReadOnly="True" />
+                <asp:BoundField DataField="EmployeeID" HeaderText="EmployeeID" SortExpression="EmployeeID" ReadOnly="True" />
+                <asp:BoundField DataField="SalesOrderForm.OrderID" HeaderText="SalesOrderForm.OrderID" SortExpression="SalesOrderForm.OrderID" ReadOnly="True" />
+                <asp:BoundField DataField="ProdID" HeaderText="ProdID" SortExpression="ProdID" ReadOnly="True" />
+                <asp:BoundField DataField="OrderQty" HeaderText="OrderQty" SortExpression="OrderQty" ReadOnly="True" />
+                <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" ReadOnly="True" />
+                <asp:BoundField DataField="Customer.CustID" HeaderText="Customer.CustID" InsertVisible="False" SortExpression="Customer.CustID" ReadOnly="True" />
+                <asp:BoundField DataField="CFName" HeaderText="CFName" SortExpression="CFName" ReadOnly="True" />
+                <asp:BoundField DataField="CLName" HeaderText="CLName" SortExpression="CLName" ReadOnly="True" />
+                <asp:CheckBoxField DataField="PayOnDel" HeaderText="PayOnDel" SortExpression="PayOnDel" ReadOnly="True" />
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                <asp:BoundField DataField="OrderDate" HeaderText="OrderDate" SortExpression="OrderDate" />
+                <asp:BoundField DataField="OrderDate" HeaderText="OrderDate" SortExpression="OrderDate" ReadOnly="True" />
+                <asp:CommandField ShowEditButton="True"  />
+                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -44,10 +46,18 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-    
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Daniel's Connection String %>" ProviderName="<%$ ConnectionStrings:Daniel's Connection String.ProviderName %>" SelectCommand="SELECT SalesOrderForm.*, PurchaseOrderDetail.*, Customer.*, Users.*, PurchaseOrderForm.* FROM ((((SalesOrderForm INNER JOIN PurchaseOrderForm ON SalesOrderForm.OrderID = PurchaseOrderForm.OrderID) INNER JOIN PurchaseOrderDetail ON PurchaseOrderForm.OrderID = PurchaseOrderDetail.OrderID) INNER JOIN Customer ON SalesOrderForm.CustID = Customer.CustID AND PurchaseOrderForm.CustID = Customer.CustID) INNER JOIN Users ON Customer.UserID = Users.UserID) WHERE PurchaseOrderForm.Status = 'Not Validated'"></asp:SqlDataSource>
-        <br />
-    
+            
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Daniel's Connection String %>" 
+            ProviderName="<%$ ConnectionStrings:Daniel's Connection String.ProviderName %>" 
+            SelectCommand="SELECT SalesOrderForm.*, PurchaseOrderDetail.*, Customer.*, Users.*, PurchaseOrderForm.* FROM ((((SalesOrderForm INNER JOIN PurchaseOrderForm ON SalesOrderForm.OrderID = PurchaseOrderForm.OrderID) INNER JOIN PurchaseOrderDetail ON PurchaseOrderForm.OrderID = PurchaseOrderDetail.OrderID) INNER JOIN Customer ON SalesOrderForm.CustID = Customer.CustID AND PurchaseOrderForm.CustID = Customer.CustID) INNER JOIN Users ON Customer.UserID = Users.UserID) WHERE PurchaseOrderForm.Status &lt;&gt; 'Validated'" 
+            UpdateCommand="UPDATE [PurchaseOrderForm] SET [Status] = @Status WHERE [OrderID] = @SalesOrderForm.OrderID" >
+            <UpdateParameters>
+                <asp:Parameter Name="Status" Type="String" />
+                <asp:Parameter Name="SalesOrderForm.OrderID" Type="Int16" />                
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        
     </div>
     </form>
 </body>

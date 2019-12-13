@@ -70,14 +70,14 @@ public partial class Catalog : System.Web.UI.Page
             }
 
             if (clsDataLayer.UpdateCatalog(Server.MapPath("~/Database/Group4DB.accdb"),
-        txtProductName.Text, txtProductDescription.Text, drpJobType.SelectedValue, drpMediaType.SelectedValue, txtListPrice.Text))
+        txtProductName.Text, txtProductDescription.Text, drpJobType.SelectedValue, drpMediaType.SelectedValue, double.Parse(txtListPrice.Text)))
             {
-                lblUpdateCatalogSuccess.Text = "The order was successfully placed!";
+                lblUpdateCatalogSuccess.Text = "The product was successfully added!";
                 grdCatalog.DataBind();
             }
             else
             {
-                lblDisplayCatalog.Text = "The order was not placed";
+                lblDisplayCatalog.Text = "The product was not added!";
 
                 lblDisplayCatalog.Text = errorMessage;
 

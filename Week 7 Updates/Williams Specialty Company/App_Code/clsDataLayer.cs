@@ -253,7 +253,7 @@ public class clsDataLayer
 
 
     // added 11/30/2019 This function updates the product catalog - Joey Muzzo
-    public static bool UpdateCatalog(string Database, string ProductName, string ProductDescription, string JobType, string MediaType, string ListPrice)
+    public static bool UpdateCatalog(string Database, string ProductName, string ProductDescription, string JobType, string MediaType, double ListPrice)
     {
         bool recordSaved;
         // represents an SQL transaction to be made at a data source
@@ -269,9 +269,8 @@ public class clsDataLayer
             // begins the SQl transaction to the data source
             myTransaction = conn.BeginTransaction();
             command.Transaction = myTransaction;
-            string ProdImage = "Image.jpg";
             strSQL = "Insert into Product " +
-            "(ProdName, ProdImage, ProdDescription, JobType, MediaType, ListPrice) values ('" + ProductName + "', '" + ProdImage + "', '" + ProductDescription + "', '" + JobType + "', '" + MediaType + "', " + ListPrice + ")";
+            "(ProdName, ProdDescription, JobType, MediaType, ListPrice) values ('" + ProductName + "', '" + ProductDescription + "', '" + JobType + "', '" + MediaType + "', " + ListPrice + ")";
            
 
             // issues a SQl string command type
